@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "cross-en NODE_ENV=test jest --verbose --watch",
-    "server": " cross-en NODE_ENV=dev nodemon index.js"
+    "test": "cross-env NODE_ENV=test jest --verbose --watch",
+    "server": " cross-env NODE_ENV=dev nodemon index.js"
   },
   "repository": {
     "type": "git",
