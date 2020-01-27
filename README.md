@@ -40,11 +40,23 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+_Answer_- Sessions is used to persist data for the client, we have been using it to persist authentication for the client(So that they do not have to sign in and out constantely), but it can be used for other purposes.
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+_Answer_- It hashes the password (several times dependant on variable given by dev) as well as Salts the password to add other characters in the hashed password.
 
 - [ ] What does bcrypt do to slow down attackers?
 
+_Answer_- uses Javasript :) A slow language. It also rehashes passwords many times over, the dev sets this variable.
+
 - [ ] What are the three parts of the JSON Web Token?
+
+_Answer_
+
+1. Header- which contains the algorithm and the token type.
+2. Payload- contains "claims", permissions for the user and any other Data we want to include that is not sensitive data.
+3. Signature- This is basically the validation for the session.
 
 ## Minimum Viable Product
 
