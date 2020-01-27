@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const userMod = require("./model/auth-model");
-const protected = require("./authenticate-middleware");
+// const protected = require("./authenticate-middleware");
 const secret = require("../database/secret/secrets");
 
 const router = require("express").Router();
@@ -10,7 +10,7 @@ const router = require("express").Router();
 router.post("/register", async (req, res) => {
   try {
     const user = await userMod.addUser(req.body);
-    res.status(200).json(user);
+    res.status(201).json(user);
   } catch (err) {
     console.log("reg", err);
   }
