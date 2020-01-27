@@ -11,6 +11,13 @@ function findById(id) {
     .first();
 }
 
+function findBy(filter) {
+  return db("users")
+    .where(filter)
+    .select()
+    .first();
+}
+
 async function addUser(user) {
   user.password = await bcrypt.hash(user.password, 10);
   const [id] = await db("users").insert(user);
@@ -20,5 +27,6 @@ async function addUser(user) {
 module.exports = {
   find,
   findById,
-  addUser
+  addUser,
+  findBy
 };

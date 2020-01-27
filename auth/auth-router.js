@@ -11,15 +11,17 @@ router.post("/register", async (req, res) => {
     const user = await userMod.addUser(req.body);
     res.status(201).json(user);
   } catch (err) {
+    res.status(401).json({ message: "Something isn't right" });
     console.log("reg", err);
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res, next) => {
   try {
     const { username, password } = req.body;
-    console.log("username, password", username, password);
-    const user = await userMod.findById({ username }).first();
+    console.log("username, password", username, password); // reading this fine
+
+    const user = await userMod.findBy({ username }).first();
     const passwordValid = await bcrypt.compare(password, user.password);
 
     if (user && passwordValid) {

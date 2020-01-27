@@ -6,7 +6,7 @@ module.exports = () => {
     try {
       const token = req.headers.authorization;
       const decoded = jwt.verify(token, secret.jwt);
-      req.user = decoded.id;
+      // req.user = decoded.id;
       next();
     } catch (err) {
       res.status(401).json({ you: "shall not pass!" });
