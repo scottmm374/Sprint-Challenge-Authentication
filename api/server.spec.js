@@ -20,5 +20,20 @@ describe("user registration", () => {
         password: "Nickleback"
       });
     expect(res.status).toBe(201);
+    expect(res.type).toBe("application/json");
   });
 });
+
+// describe("user login", () => {
+//   it("should login user", async () => {
+//     const login = await supertest(server)
+//       .post("/api/auth/login")
+//       .send({
+//         username: "Ann",
+//         password: "Nothing"
+//       });
+//     expect(res.status).toBe(200);
+//     expect(login.text).toContain("token");
+//     expect(login.text).toContain("message");
+//   });
+// });

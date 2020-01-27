@@ -1,5 +1,4 @@
 const bcrypt = require("bcryptjs");
-const express = require("express");
 const jwt = require("jsonwebtoken");
 const userMod = require("./model/auth-model");
 // const protected = require("./authenticate-middleware");
@@ -20,9 +19,9 @@ router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await userMod.findById({ username }).first();
-    const validPassword = await bcrypt.compare(password, user.password);
+    const passwordValid = await bcrypt.compare(password, user.password);
 
-    if (user && validPassword) {
+    if (user && passwordValid) {
       const token = jwt.sign(
         {
           id: user.id,

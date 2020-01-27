@@ -3,7 +3,7 @@ const userMod = require("./auth-model");
 
 // beforeEach(async () => {
 //   await db.seed.run();
-// });  Took this out, causing issues with unique Constraint
+// });
 
 describe("Users model", () => {
   test("find", async () => {
@@ -13,12 +13,6 @@ describe("Users model", () => {
 
   test("findById", async () => {
     const user = await userMod.findById(1);
-    expect(user.username).toBe("Ann");
+    expect(user.username).toBe("Jason");
   });
-
-//   test("addUser", async () => {
-//     await userMod.addUser({ username: "John", password: "anything" });
-//     const users = await db("users").select();
-//     expect(users).toHaveLength(5);
-//   });
-// });
+});
