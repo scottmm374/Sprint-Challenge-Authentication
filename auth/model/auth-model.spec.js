@@ -15,4 +15,10 @@ describe("Users model", () => {
     const user = await userMod.findById(1);
     expect(user.username).toBe("Ann");
   });
-});
+
+//   test("addUser", async () => {
+//     await userMod.addUser({ username: "John", password: "anything" });
+//     const users = await db("users").select();
+//     expect(users).toHaveLength(5);
+//   });
+// });
